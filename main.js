@@ -64,7 +64,7 @@ function dayOfTheWeek(day, month, year){
     return weekday[new Date(`${day}/${month}/${year}`).getDay()];
 };
 
-// https://www.weatherapi.com/my/  for api
+// https://www.weatherapi.com/my/  for api key
 
 function fetchWeatherData() {
     fetch(`https://api.weatherapi.com/v1/current.json?key=e1a96a842fad41a6a94162208253008&q=${cityInput}`)
@@ -193,6 +193,6 @@ function fetchWeatherData() {
 });
 }
 
-fetchWeatherData()
+fetchWeatherData()   
 
 
