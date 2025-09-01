@@ -67,7 +67,7 @@ function dayOfTheWeek(day, month, year){
 // https://www.weatherapi.com/my/  for api
 
 function fetchWeatherData() {
-    fetch(`http://api.weatherapi.com/v1/current.json?key=e1a96a842fad41a6a94162208253008&q=${cityInput}`)
+    fetch(`https://api.weatherapi.com/v1/current.json?key=e1a96a842fad41a6a94162208253008&q=${cityInput}`)
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -196,66 +196,3 @@ function fetchWeatherData() {
 fetchWeatherData()
 
 
-// function fetchWeatherData() {
-//     const apiKey = "e1a96a842fad41a6a94162208253008"; // your API key
-//     const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${cityInput}&aqi=no`;
-
-//     fetch(url)
-//         .then(response => {
-//             if (!response.ok) {
-//                 throw new Error("Network response was not ok: " + response.status);
-//             }
-//             return response.json();
-//         })
-//         .then(data => {
-//             console.log(JSON.stringify(data, null, 2)); // pretty print JSON
-
-//             // Temperature
-//             const tempOutput = document.querySelector('.temp');
-//             tempOutput.innerHTML = data.current.temp_c + "&#176;";
-
-//             // Condition text
-//             conditionOutput.innerHTML = data.current.condition.text;
-
-//             // Date and time
-//             const date = data.location.localtime;
-//             const y = parseInt(date.substr(0, 4));
-//             const m = parseInt(date.substr(5, 2));
-//             const d = parseInt(date.substr(8, 2));
-//             const time = date.substr(11);
-
-//             dateOutput.innerHTML = `${dayOfTheWeek(d, m, y)} ${d},${m} ${y}`;
-//             timeOutput.innerHTML = time;
-
-//             // Location name
-//             nameOutput.innerHTML = data.location.name;
-
-
-//             const iconId=data.current.condition.icon.substr(
-//                 "https://cdn.weatherapi.com/weather/64x64/day/116.png".length
-//             );
-
-//                         icon.src = "https:" + data.current.condition.icon;
-
-//             // Extra data
-//             cloudOutput.innerHTML = data.current.cloud + "%";
-//             humidityOutput.innerHTML = data.current.humidity + "%";
-//             windOutput.innerHTML = data.current.wind_kph + " km/h";
-
-//             let timeOfDay ="day"
-//             const code =  data.current.condition.code;
-
-//             if(!data.current.is_day){
-//                 timeOfDay ="night";
-//             }
-//             if(code == 1000){
-//                 app.style.backgroundImage=
-//             }
-
-//         })
-//         .catch(error => {
-//             console.error("Fetch error:", error);
-//         });
-
-        
-// }
